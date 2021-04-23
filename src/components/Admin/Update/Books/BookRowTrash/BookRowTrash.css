@@ -1,0 +1,9 @@
+.btn-convert {
+    color: #fff;
+    background-color: #17ac17;
+    border-radius: 5px;
+    margin: 5px;
+}
+.btn-convert:hover {
+    color: #fff;
+}

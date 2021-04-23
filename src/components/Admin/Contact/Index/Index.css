@@ -1,0 +1,11 @@
+.page-index {
+    height: 100%;
+    text-align: center;
+    position: relative;
+}
+.page-index p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+}

@@ -1,0 +1,23 @@
+.mail-item {
+    display: flex;
+    background-color: #d1d1d1;
+    border: 1px solid tan;
+}
+.item-ct {
+    text-align: start;
+    width: 80%;
+    cursor: pointer;
+}
+.item-ct > h3 {
+    color: black;
+    font-size: larger;
+    margin: 0;
+    padding: 0;
+}
+.item-ct > p {
+    color: #9b9999;
+    font-size: small;
+}
+.mail-item.read {
+    background-color: #f7f7f7;
+}

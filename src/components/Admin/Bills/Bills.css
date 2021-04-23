@@ -1,0 +1,16 @@
+.note-color {
+    padding: 30px;
+}
+.note-color .form-control {
+    width: 200px;
+    background-color: #fdb009;
+    color: #fff;
+}
+.note-color .form-control option {
+    background-color: #ffedc5;
+    color: black;
+    padding: 5px 20px;
+}
+.note-color .form-control.decorated option:hover {
+    background-color: #fdb009 !important;
+}

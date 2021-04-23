@@ -1,0 +1,7 @@
+.result-page {
+    padding: 20px;
+}
+.result-items {
+    display: flex;
+    flex-wrap: wrap;
+}

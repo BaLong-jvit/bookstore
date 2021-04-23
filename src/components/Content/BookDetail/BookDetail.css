@@ -1,0 +1,82 @@
+.book-detail {
+    padding: 10px;
+}
+.view-book img {
+    width: 100%;
+    height: 400px;
+    padding: 20px;
+}
+.sp-img {
+    display: flex;
+    position: relative;
+}
+.sp-img-items {
+    width: 80px;
+    height: 80px;
+    margin: 10px auto;
+}
+.sp-img-items img {
+    width: 100%;
+    height: 100%;
+}
+.btn-control-sp {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #000000;
+    opacity: 0.2;
+    color: #fff;
+}
+.btn-control-sp:hover {
+    opacity: 0.5;
+    color: #fff;
+}
+.btn-aleft {
+    left: 0;
+}
+.btn-aright {
+    right: 0;
+}
+.book-info {
+    padding: 20px;
+}
+.center-info p {
+    font-weight: 600;
+    margin: 0;
+}
+.center-info h2 {
+    color: #fe980f;
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0;
+    text-transform: uppercase;
+}
+.center-info h4 {
+    margin-bottom: 0px !important;
+    font-weight: 400;
+    font-size: 14px;
+    font-style: oblique;
+    color: tomato;
+    text-decoration: line-through;
+}
+.center-info div label {
+    margin-right: 20px;
+}
+#amount {
+    height: 48px;
+    width: 48px;
+    text-align: center;
+}
+.btn-cart {
+    background-color: #fe980f;
+    color: #fff;
+    margin: 20px;
+}
+.btn-cart:hover {
+    background-color: #ff5100;
+    color: #fff;
+}
+.book-detail h2 {
+    color: #fe980f;
+}

@@ -1,0 +1,95 @@
+.content {
+    width: 100vw;
+    overflow-x: hidden;
+}
+.left-menu {
+    width: 220px;
+    display: block;
+    position: absolute;
+    padding-top: 58px;
+    top: 0;
+    left: 0px;
+    height: 100vh;
+    background-color: #fcdaa8;
+    animation: showMenu 1s;
+}
+.left-menu.show {
+    left: -220px;
+    animation: hideMenu 1s;
+    z-index: 999;
+}
+.left-menu ul {
+    padding: 0;
+    margin: 0;
+}
+.left-menu ul li {
+    padding: 10px 0 10px 30px;
+    background-color: #fdbb57;
+    border-bottom: 1px solid #ffeccf;
+}
+.left-menu ul li a {
+    color: #fff;
+}
+.pr-sub {
+    padding-bottom: 0 !important;
+}
+
+.main-admin {
+    padding-top: 58px;
+    padding-left: 220px;
+    width: 100vw;
+    height: 100vh;
+    animation: hideMain 1s;
+}
+.main-admin.show {
+    padding-left: 0;
+    animation: showMain 1s;
+}
+@media screen and (max-width: 389px) {
+    .main-admin {
+        padding-left: 0 !important;
+        padding-top: 116px;
+    }
+    .left-menu {
+        padding-top: 116px;
+        left: -220px !important;
+        animation: hideMenu 1s !important;
+    }
+    .left-menu.show {
+        left: 0px !important;
+        animation: showMenu 1s !important;
+    }
+}
+@keyframes showMenu {
+    from {
+        left: -220px;
+    }
+    to {
+        left: 0;
+    }
+}
+@keyframes hideMenu {
+    from {
+        left: 0px;
+    }
+    to {
+        left: -220px;
+    }
+}
+
+@keyframes showMain {
+    from {
+        padding-left: 220px;
+    }
+    to {
+        padding-left: 0;
+    }
+}
+@keyframes hideMain {
+    from {
+        padding-left: 0px;
+    }
+    to {
+        padding-left: 220px;
+    }
+}

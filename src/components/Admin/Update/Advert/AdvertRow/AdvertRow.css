@@ -1,0 +1,13 @@
+.btn-list {
+    color: #fff;
+    background-color: #2276f3;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px;
+}
+.btn-list:hover {
+    color: #fff !important;
+}
+.btns-react {
+    display: inline-flex;
+}

@@ -1,0 +1,11 @@
+.adv-list {
+    padding: 10px;
+}
+.adv-banner {
+    width: 90%;
+    margin: auto;
+}
+.adv-banner img {
+    width: 100%;
+    height: 400px;
+}

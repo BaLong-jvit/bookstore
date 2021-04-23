@@ -1,0 +1,23 @@
+.blog-comment {
+    margin: 20px 10px;
+    display: block;
+}
+.blog-comment h2 {
+    color: #fe980f;
+}
+.type-comment {
+    width: 100%;
+    margin-bottom: 10px;
+}
+.type-comment input {
+    background: #f0f0e9;
+    border: medium none;
+    color: #b2b2b2;
+    font-family: "roboto";
+    font-size: 12px;
+    font-weight: 300;
+    height: 35px;
+    outline: medium none;
+    padding-left: 10px;
+    width: 70%;
+}

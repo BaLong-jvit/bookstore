@@ -1,0 +1,10 @@
+.update-artist h2 {
+    align-items: center;
+    text-align: center;
+    margin: 30px 0 auto;
+    color: #fdbb57;
+}
+.control-artist {
+    float: right;
+    padding: 20px;
+}

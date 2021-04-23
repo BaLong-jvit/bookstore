@@ -1,0 +1,29 @@
+#slider {
+    padding-bottom: 45px;
+}
+.carousel-indicators li {
+    background: #c4c4be;
+    border-top: 0;
+    border-bottom: 0;
+    height: 5px;
+}
+.carousel-indicators li.active {
+    background: #fe980f;
+}
+.carousel-inner {
+    padding: 10px 20px;
+}
+.carousel.slide > a {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.carousel.slide > a:hover {
+    background-color: #c4c4be;
+}
+.frontIcon {
+    height: 40px;
+    width: 40px;
+}

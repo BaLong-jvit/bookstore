@@ -1,0 +1,16 @@
+.comment-item {
+    display: flex;
+}
+.avt-cmt {
+    width: 100px;
+    min-height: 100px;
+}
+.avt-cmt img {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+}
+.cmt-content h3 {
+    color: #5b6bff;
+    font-size: 22px;
+}

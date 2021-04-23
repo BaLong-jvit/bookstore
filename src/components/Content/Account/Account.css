@@ -1,0 +1,18 @@
+.wap-img {
+    width: 100%;
+    position: relative;
+}
+.wap-img img {
+    width: 90%;
+    height: 90%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.set-height {
+    padding-top: 90%;
+}
+.adv-list {
+    padding: 10px;
+}

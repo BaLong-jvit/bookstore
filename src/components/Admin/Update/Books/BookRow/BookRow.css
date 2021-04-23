@@ -1,0 +1,43 @@
+.btn-edit {
+    color: #fff;
+    background-color: #17ac17;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px;
+}
+.btn-delete {
+    color: #fff;
+    background-color: #ff0000;
+    border-radius: 5px;
+    margin: 5px;
+}
+.btn-edit:hover {
+    color: #fff;
+}
+.btn-delete:hover {
+    color: #fff;
+}
+.img-item img {
+    width: 100px;
+    height: 100px;
+}
+.btn-option {
+    text-align: end;
+    width: 100%;
+    padding: 20px;
+    border-top: 2px solid #ffe23b;
+}
+.btn-cancel {
+    margin: 0 10px;
+}
+.btn-cancel:focus {
+    outline: none;
+}
+.btn-accept {
+    margin: 0 10px;
+    background-color: #e79e2f;
+    color: #fff;
+}
+.btn-accept:hover {
+    color: #fff;
+}

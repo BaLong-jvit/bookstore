@@ -1,0 +1,11 @@
+.title.list-shop h3.title {
+    color: #fe980f;
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 20px auto 30px;
+    text-align: center;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 3;
+}

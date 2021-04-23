@@ -1,0 +1,44 @@
+.market {
+    margin: 15px;
+}
+.market-view {
+    background-color: #ff5e5e;
+}
+.market-users {
+    background-color: #815eff;
+}
+.market-sale {
+    background-color: #71ff5e;
+}
+.market-order {
+    background-color: #fffb00;
+}
+.market-icon {
+    text-align: center;
+}
+.market-icon i {
+    color: #fff;
+    margin: 30px 0;
+    font-size: 30px;
+}
+.market-info {
+    padding: 20px;
+}
+.market-info h4,
+.market-info h3,
+.market-info p {
+    margin: 0;
+    padding: 0;
+    color: #fff !important;
+}
+.market:hover {
+    background-color: #4e3961;
+    animation: changeColor 0.2s;
+}
+@keyframes changeColor {
+    from {
+    }
+    to {
+        background-color: #4e3961;
+    }
+}

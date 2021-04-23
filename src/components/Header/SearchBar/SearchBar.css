@@ -1,0 +1,36 @@
+.search_box {
+    width: 100%;
+    height: 56px;
+}
+
+.search_box input {
+    background: #f0f0e9;
+    border: medium none;
+    color: #b2b2b2;
+    font-family: "roboto";
+    font-size: 12px;
+    font-weight: 300;
+    height: 35px;
+    outline: medium none;
+    padding-left: 10px;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.search_box button {
+    border: medium none;
+    background: #f0f0e9;
+    color: #b2b2b2;
+    font-family: "roboto";
+    font-size: 12px;
+    font-weight: 300;
+    height: 35px;
+    width: 35px;
+    outline: medium none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+}

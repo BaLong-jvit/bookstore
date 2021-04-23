@@ -1,0 +1,69 @@
+.update-book h2 {
+    align-items: center;
+    text-align: center;
+    margin: 30px 0 auto;
+    color: #fdbb57;
+}
+.control-book {
+    float: right;
+    padding: 20px;
+}
+.btn-add {
+    color: #fff;
+    background-color: #17ac17;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px;
+}
+.btn-add:hover {
+    color: #fff;
+}
+.btn-trash {
+    color: #fff;
+    background-color: #ff0000;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px;
+}
+.btn-trash:hover {
+    color: #fff;
+}
+ul.pagination {
+    margin: 15px auto;
+}
+ul.pagination li {
+    padding: 10px 15px;
+    margin: 0 5px;
+    border-radius: 5px;
+    border: 1px solid #fdb45e;
+    cursor: pointer;
+}
+ul.pagination li:hover {
+    background-color: #fdb45e;
+}
+ul.pagination li:hover a {
+    color: #fff !important;
+}
+ul.pagination li a {
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 600;
+    color: #fdb45e;
+}
+ul.pagination li.active {
+    background-color: #fdb45e;
+    cursor: default !important;
+}
+a.undefined {
+    color: #fff !important;
+    cursor: default;
+}
+.disabled a {
+    cursor: default;
+    color: #fff !important;
+}
+.disabled {
+    background-color: darkgray !important;
+    border: none !important;
+    cursor: default !important;
+}

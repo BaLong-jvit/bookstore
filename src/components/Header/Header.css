@@ -1,0 +1,289 @@
+.header_top {
+    background: none repeat scroll 0 0 #f0f0e9;
+}
+
+.contactinfo ul li:first-child {
+    margin-left: -15px;
+}
+
+.header-middle {
+    padding-top: 10px;
+}
+.drop-menu {
+    padding: 0.5rem 0rem;
+}
+.contactinfo ul li a {
+    font-size: 12px;
+    color: #696763;
+    font-family: "Roboto", sans-serif;
+}
+
+.btn-login {
+    background-color: #fe980f;
+    color: #fff;
+}
+.btn-login:hover {
+    background-color: #fe980f;
+    color: #fff;
+}
+.contactinfo ul li a:hover {
+    background: inherit;
+}
+.logo {
+    padding: 0 10px 0 0;
+}
+.nav-item a {
+    border: 0 none;
+    border-radius: 0;
+    color: #696763;
+    padding: 0px;
+}
+
+.nav-item {
+    display: inline-block;
+}
+
+.nav-item a i {
+    padding: 11px 15px;
+    transition: all 0.9s ease 0s;
+    -moz-transition: all 0.9s ease 0s;
+    -webkit-transition: all 0.9s ease 0s;
+    -o-transition: all 0.9s ease 0s;
+}
+
+.nav-item a i:hover {
+    color: #fff;
+    transition: all 0.9s ease 0s;
+    -moz-transition: all 0.9s ease 0s;
+    -webkit-transition: all 0.9s ease 0s;
+    -o-transition: all 0.9s ease 0s;
+}
+
+.fa-facebook:hover {
+    background: #0083c9;
+}
+
+.fa-twitter:hover {
+    background: #5bbcec;
+}
+
+.fa-linkedin:hover {
+    background: #ff4518;
+}
+.fa-zalo:hover {
+    background-color: rgb(13, 166, 255);
+}
+.fa-youtb:hover {
+    background-color: rgb(255, 0, 0);
+}
+
+.fa-google-plus:hover {
+    background: #ce3c2d;
+}
+
+.header-middle .container .row {
+    border-bottom: 1px solid #f5f5f5;
+    margin-left: 0;
+    margin-right: 0;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.usa {
+    border-radius: 0;
+    color: #b4b1ab;
+    font-size: 12px;
+    padding: 2px 10px;
+}
+
+.usa button {
+    color: #696763;
+    background-color: #ffffff00;
+    border: 0;
+}
+
+.usa:hover {
+    background: #fe980f;
+    color: #fff;
+    border-color: #fe980f;
+}
+
+.usa:active,
+.usa.active {
+    background: none repeat scroll 0 0 #fe980f;
+    box-shadow: inherit;
+    outline: 0 none;
+}
+
+.btn-group.open .dropdown-toggle {
+    background: rgba(0, 0, 0, 0);
+    box-shadow: none;
+}
+
+.dropdown-menu li a:hover,
+.dropdown-menu li a:focus {
+    background-color: #fe980f;
+    color: #ffffff;
+    font-family: "Roboto", sans-serif;
+    text-decoration: none;
+}
+
+.shop-menu .nav-item {
+    display: inline-block;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.shop-menu .nav-item:last-child {
+    padding-right: 0;
+}
+
+.shop-menu .nav-item a {
+    background: #ffffff;
+    color: #696763;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    padding: 0;
+    padding-right: 0;
+    margin-top: 10px;
+}
+
+.shop-menu .nav-item a i {
+    margin-right: 3px;
+}
+
+.shop-menu .nav-item a:hover {
+    color: #fe980f;
+    background: #fff;
+}
+
+.header-bottom {
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.navbar-collapse.collapse {
+    padding-left: 0;
+}
+
+.mainmenu ul li {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.mainmenu ul li:first-child {
+    padding-left: 0px;
+}
+
+.mainmenu ul li a {
+    color: #696763;
+    font-family: "Roboto", sans-serif;
+    font-size: 17px;
+    font-weight: 300;
+    padding: 0;
+    padding-bottom: 10px;
+}
+
+.mainmenu ul li a:hover,
+.mainmenu ul li a.active,
+.shop-menu ul li a.active {
+    background: none;
+    color: #fdb45e;
+}
+/*  Dropdown menu*/
+
+.drop-menu:hover > .dropdown-menu {
+    display: block !important;
+    -webkit-animation: fadeInUp 400ms;
+    -moz-animation: fadeInUp 400ms;
+    -ms-animation: fadeInUp 400ms;
+    -o-animation: fadeInUp 400ms;
+    animation: fadeInUp 400ms;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    background: rgba(0, 0, 0, 0.6);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 220px;
+    -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+    display: none;
+    z-index: 999;
+}
+
+.dropdown .dropdown-menu a .active {
+    color: #fdb45e;
+    padding-left: 0;
+}
+
+.drop-menu .dropdown-menu a {
+    padding: 10px 20px 0;
+}
+
+.drop-menu .dropdown-menu a:last-child {
+    padding-bottom: 20px;
+}
+
+.drop-menu .dropdown-menu a {
+    color: #fff;
+}
+
+.drop-menu .dropdown-menu a:hover {
+    color: #fdb45e;
+}
+
+.fa-angle-down {
+    padding-left: 5px;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(20px);
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+.fa-zalo i::after {
+    content: "lO";
+    color: rgba(255, 255, 255, 0);
+    background-image: url("../../../src/image/icon/zalo-default.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: 0.9s all;
+}
+.fa-zalo {
+    transition: 0.9s;
+}
+
+.fa-zalo:hover i::after {
+    background-image: url("../../../src/image/icon/zalo-hover.png");
+}
+.fa-youtb {
+    transition: 0.9s;
+}
+#login-notify {
+    position: fixed;
+    display: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+}
+#login-notify p {
+    color: #fff;
+    font-size: 20px;
+    padding: 30px 50px;
+    margin: 0;
+}

@@ -1,0 +1,69 @@
+.fgr-main-image {
+    display: flex;
+}
+.fgr-main-image img {
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+}
+.fgr-sup-image {
+    display: flex;
+}
+.fgr-sup-image img {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+}
+.w-sup-img {
+    position: relative;
+}
+.close-sup {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: #7e7e7e8e;
+    color: #fff;
+    line-height: 0;
+    padding: 5px;
+}
+.form-edit-book {
+    padding: 50px 0;
+}
+.form-btn {
+    text-align: center;
+}
+.select-artist {
+    display: flex;
+    margin: 5px;
+    height: 50px;
+    padding: 10px;
+    border: 1px solid #c5c3c3;
+    background-color: rgb(244, 253, 114);
+}
+.select-artist span {
+    padding-left: 5px;
+    border: 1px dashed #c5c3c3;
+    background-color: gray;
+}
+.select-artist span strong {
+    border-left: 1px dashed #c5c3c3;
+    padding: 5px;
+    cursor: pointer;
+    color: #fff;
+}
+.cancel {
+    background-color: #ff0000;
+    color: #fff;
+    padding: 5 10px;
+    margin: 0 10px;
+}
+.submit {
+    background-color: #ffae00;
+    color: #fff;
+    padding: 5 10px;
+    margin: 0 10px;
+}
+.cancel:hover,
+.submit:hover {
+    color: #fff;
+}

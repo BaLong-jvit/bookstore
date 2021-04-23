@@ -1,0 +1,13 @@
+div.sub-pr {
+    cursor: pointer;
+    margin-bottom: 10px !important;
+    color: #fff;
+}
+
+.sub-st {
+    display: none;
+    margin-top: 10px !important;
+}
+.sub-st li {
+    background-color: #fdb548 !important;
+}

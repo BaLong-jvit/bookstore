@@ -1,0 +1,76 @@
+.title.blog-area h2 {
+    color: #fe980f;
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 auto 30px;
+    text-align: center;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 3;
+}
+.title.blog-area h2:after,
+h2.title.blog-area:after {
+    content: " ";
+    position: absolute;
+    border: 2px solid #ebebeb;
+    bottom: 8px;
+    left: 0;
+    width: 100%;
+    height: 0;
+    z-index: -2;
+}
+.title.blog-area h2:before {
+    content: " ";
+    position: absolute;
+    background: #fff;
+    bottom: -6px;
+    width: 160px;
+    height: 30px;
+    z-index: -1;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-left: 0;
+}
+.blog-area {
+    padding: 20px 10px;
+}
+ul.pagination {
+    margin: 15px auto;
+}
+ul.pagination li {
+    padding: 10px 15px;
+    margin: 0 5px;
+    border-radius: 5px;
+    border: 1px solid #fdb45e;
+    cursor: pointer;
+}
+ul.pagination li:hover {
+    background-color: #fdb45e;
+}
+ul.pagination li:hover a {
+    color: #fff !important;
+}
+ul.pagination li a {
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 600;
+    color: #fdb45e;
+}
+ul.pagination li.active {
+    background-color: #fdb45e;
+    cursor: default !important;
+}
+a.undefined {
+    color: #fff !important;
+    cursor: default;
+}
+.disabled a {
+    cursor: default;
+    color: #fff !important;
+}
+.disabled {
+    background-color: darkgray !important;
+    border: none !important;
+    cursor: default !important;
+}

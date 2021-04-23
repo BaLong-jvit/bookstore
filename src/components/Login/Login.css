@@ -1,0 +1,74 @@
+.wp-login {
+    background-image: url("../../image/admin/login/background.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+.main-login {
+    position: fixed;
+    top: 5rem;
+    width: 30%;
+    left: 50%;
+    padding: 50px;
+    background-color: #f1dca882;
+    border-radius: 10px;
+    transform: translateX(-50%);
+}
+.main-login h2 {
+    color: #ffc936;
+    text-align: center;
+    margin-bottom: 45px;
+}
+.btn-login-admin {
+    background-color: #fe980f;
+    color: #fff;
+    margin-top: 45px;
+    float: right;
+}
+.btn-login-admin:hover {
+    color: #fff;
+    background-color: #ff9100;
+}
+#login-notify {
+    position: fixed;
+    display: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+}
+#login-notify p {
+    color: #fff;
+    font-size: 20px;
+    padding: 30px 50px;
+    margin: 0;
+}
+
+@media screen and (max-width: 1440px) {
+    .main-login {
+        width: 33%;
+    }
+}
+@media screen and (max-width: 1366px) {
+    .main-login {
+        width: 35%;
+    }
+}
+@media screen and (max-width: 1280px) {
+    .main-login {
+        width: 37%;
+    }
+}
+@media screen and (max-width: 1080px) {
+    .main-login {
+        width: 45%;
+    }
+}
+@media screen and (max-width: 1024px) {
+    .main-login {
+        width: 47%;
+    }
+}

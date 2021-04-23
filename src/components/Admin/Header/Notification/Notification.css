@@ -1,0 +1,118 @@
+.notify {
+    position: relative;
+}
+.notify-icon {
+    display: flex;
+    margin: 10px;
+    background-color: #a7a7a7;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.ntf-icon {
+    padding: 5px;
+    position: relative;
+}
+.ntf-icon span {
+    padding: 5px;
+    position: absolute;
+    border-radius: 50%;
+    font-size: 14px;
+    line-height: 0.5;
+    top: 5px;
+    left: 20px;
+    color: #fff;
+    background-color: #ff0000;
+}
+.ntf-icon i {
+    font-size: 24px;
+}
+.ntf-tt {
+    font-size: 17px;
+    font-weight: 500;
+    padding: 5px 10px 5px 0;
+    color: #ffffff;
+}
+.list-notify {
+    position: absolute;
+    display: none;
+    width: 300px;
+    background-color: #ffffff;
+    border: 1px solid #a7a7a7;
+    top: 100%;
+    right: 10px;
+    border-radius: 5px;
+}
+.header-ntf {
+    background-color: #ffac40;
+    text-align: center;
+}
+.header-ntf span {
+    color: #ffffff;
+    margin: 10px;
+    font-size: 1.5rem;
+}
+.content-ntf {
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+}
+
+.content-ntf::-webkit-scrollbar {
+    width: 9px;
+}
+
+.content-ntf::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgb(235, 235, 235);
+}
+
+.content-ntf::-webkit-scrollbar-thumb {
+    background: #cccccc;
+    border-radius: 10px;
+}
+.content-ntf:hover {
+    overflow-y: scroll;
+}
+.list-ntf {
+    padding: 0;
+}
+.item-ntf {
+    border-bottom: 1px solid #cecbcb;
+    padding-left: 30px;
+}
+.item-ntf h2 {
+    margin: 0;
+    font-size: 1rem;
+}
+.item-ntf p {
+    font-size: 0.8rem;
+    color: gray;
+    margin: 0;
+}
+.item-ntf span {
+    margin-left: 150px;
+    color: #cbcbcb;
+    font-size: small;
+    font-style: italic;
+}
+.footer-ntf {
+    text-align: center;
+    padding: 10px;
+    border-top: 1px solid gray;
+}
+.footer-ntf span {
+    font-size: 17px;
+    color: green;
+}
+@media screen and (max-width: 768px) {
+    .ntf-icon {
+        padding: 5px 10px;
+    }
+    .ntf-tt {
+        display: none;
+    }
+}
+@media screen and (max-width: 425px) {
+    .list-notify {
+        right: -50px;
+    }
+}

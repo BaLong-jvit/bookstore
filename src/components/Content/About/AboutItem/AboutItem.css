@@ -1,0 +1,43 @@
+.about-us h3 {
+    position: relative;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #fe980f;
+    font-size: 22px;
+    padding: 20px;
+}
+.content-about {
+    position: relative;
+    text-align: justify;
+}
+.content-about p {
+    position: absolute;
+    width: 85%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.image-about {
+    position: relative;
+}
+.image-about img {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 90%;
+}
+.image-about div {
+    padding-top: 45%;
+    position: relative;
+    text-align: center;
+}
+@media screen and (max-width: 996px) {
+    .content-about p {
+        position: relative;
+    }
+    .image-about div {
+        padding-top: 100%;
+    }
+}

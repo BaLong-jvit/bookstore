@@ -1,0 +1,182 @@
+.dflex {
+    display: flex;
+    cursor: pointer;
+}
+.list-cat {
+    display: none;
+    background: #ffffff99;
+    list-style: none;
+    padding: 0 0 20px;
+    margin: 0 0 30px;
+    width: 220px;
+    -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+}
+.list-cat a {
+    display: block;
+    padding: 0;
+    border-bottom: 2px solid #ffffff99;
+    color: #696763;
+    font-family: "Roboto", sans-serif;
+    font-size: 0;
+    font-weight: 500;
+}
+
+.list-cat a:hover {
+    background-color: #696763;
+    color: #fdb45e !important;
+}
+.list-cat.active {
+    display: block;
+    animation: showDivList 1s ease both;
+}
+
+.list-cat.active > a {
+    font-size: 17px;
+    font-weight: 500;
+    padding: 10px 20px 0;
+    animation: showList 1s ease both;
+}
+
+.dflex h2::before {
+    content: none;
+}
+.dflex h2::after {
+    content: none;
+}
+@keyframes showDivList {
+    from {
+        height: 0;
+    }
+    to {
+        height: auto;
+    }
+}
+/* Firefox < 16 */
+@-moz-keyframes showDivList {
+    from {
+        height: 0;
+    }
+    to {
+        height: auto;
+    }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes showDivList {
+    from {
+        height: 0;
+    }
+    to {
+        height: auto;
+    }
+}
+
+/* Internet Explorer */
+@-ms-keyframes showDivList {
+    from {
+        height: 0;
+    }
+    to {
+        height: auto;
+    }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes showDivList {
+    from {
+        height: 0;
+    }
+    to {
+        height: auto;
+    }
+}
+@keyframes showList {
+    from {
+        font-weight: 0;
+        padding: 0 20px;
+        height: 0;
+        color: #fff;
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+
+        height: auto;
+        font-size: 17px;
+        font-weight: 500;
+        padding: 10px 20px 0;
+    }
+}
+/* Firefox < 16 */
+@-moz-keyframes showList {
+    from {
+        font-weight: 0;
+        padding: 0 20px;
+        height: 0;
+        color: #fff;
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+
+        height: auto;
+        font-size: 17px;
+        font-weight: 500;
+        padding: 10px 20px 0;
+    }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes showList {
+    from {
+        font-weight: 0;
+        padding: 0 20px;
+        height: 0;
+        color: #fff;
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+        height: auto;
+        font-size: 17px;
+        font-weight: 500;
+        padding: 10px 20px 0;
+    }
+}
+
+/* Internet Explorer */
+@-ms-keyframes showList {
+    from {
+        font-weight: 0;
+        padding: 0 20px;
+        height: 0;
+        color: #fff;
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+        height: auto;
+        font-size: 17px;
+        font-weight: 500;
+        padding: 10px 20px 0;
+    }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes showList {
+    from {
+        font-weight: 0;
+        padding: 0 20px;
+        height: 0;
+        color: #fff;
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+        height: auto;
+        font-size: 17px;
+        font-weight: 500;
+        padding: 10px 20px 0;
+    }
+}

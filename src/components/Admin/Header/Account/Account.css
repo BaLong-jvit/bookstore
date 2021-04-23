@@ -1,0 +1,45 @@
+.acc-admin {
+    position: relative;
+}
+.admin {
+    background-color: #a7a7a7;
+    border-radius: 20px;
+    margin: 10px;
+}
+.admin img {
+    width: 38px;
+    padding: 5px;
+    border-radius: 50%;
+    height: 38px;
+}
+.admin span {
+    font-size: 17px;
+    font-weight: 500;
+    padding: 5px 10px 5px 0;
+    color: #ffffff;
+}
+.acc-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 10px;
+    width: 140px;
+    background-color: #ffffff;
+    border: 1px solid #7c7c7c;
+    border-radius: 5px;
+}
+.acc-menu ul {
+    padding: 0px;
+}
+.acc-menu ul li {
+    border-bottom: 1px solid #a7a7a7;
+    padding: 10px 20px;
+}
+.acc-menu ul li a {
+    color: #ffb81f;
+}
+@media screen and (max-width: 768px) {
+    .admin span {
+        display: none;
+    }
+}
