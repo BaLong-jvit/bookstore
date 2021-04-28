@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, BrowserRouter as Router, withRouter, Switch, Route } from 'react-router-dom';
 import Account from './Account/Account';
+import AccountTrash from './Account/AccountTrash';
 import './Admin.css';
 import AdminAccount from './AdminAccount/AdminAccount';
 import Bills from './Bills/Bills';
@@ -94,6 +95,9 @@ class Admin extends React.Component {
                                 </Route>
                                 <Route path='/admin/bills'>
                                     <Bills />
+                                </Route>
+                                <Route path='/admin/account/trash'>
+                                    <AccountTrash />
                                 </Route>
                                 <Route path='/admin/account'>
                                     <Account />

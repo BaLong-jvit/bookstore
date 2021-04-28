@@ -23,9 +23,16 @@ class Header extends React.Component {
             localShop: [],
             isLogin: false,
             showLogin: false,
+            showSignIn: false,
             loginNotify: '',
             username: '',
-            password: ''
+            password: '',
+            acceptName: true,
+            acceptPassword: true,
+            reName: '',
+            disName: '',
+            regisPassword: '',
+            rePassword: '',
         }
         this.showFormLogin = this.showFormLogin.bind(this);
         this.hideFormLogin = this.hideFormLogin.bind(this);
@@ -34,6 +41,14 @@ class Header extends React.Component {
         this.handlePassword = this.handlePassword.bind(this);
         this.submitLogin = this.submitLogin.bind(this);
         this.showLoginNotify = this.showLoginNotify.bind(this);
+        this.showRegister = this.showRegister.bind(this);
+        this.hideRegister = this.hideRegister.bind(this);
+        this.submitRegister = this.submitRegister.bind(this);
+
+        this.handleDisName = this.handleDisName.bind(this);
+        this.handleReName = this.handleReName.bind(this);
+        this.handleRegisPassword = this.handleRegisPassword.bind(this);
+        this.handleRePassword = this.handleRePassword.bind(this);
     }
     componentDidMount() {
         this.getContact();
@@ -64,6 +79,7 @@ class Header extends React.Component {
     }
     showFormLogin(e) {
         e.preventDefault();
+        this.hideRegister();
         this.setState({ showLogin: true })
     }
     hideFormLogin() {
@@ -85,21 +101,22 @@ class Header extends React.Component {
                 localStorage.password = this.state.password;
                 this.setState({ isLogin: true });
                 this.setState({ showLogin: false });
-                this.showLoginNotify();
+                this.showLoginNotify('Đăng nhập thành công');
             } else {
-                this.showLoginNotify();
+                this.showLoginNotify('Đăng nhập thất bại');
             }
         })
     }
-    showLoginNotify() {
+    showLoginNotify(mess) {
+        this.setState({ loginNotify: `${mess}` });
         if (this.state.isLogin) {
-            this.setState({ loginNotify: 'Đăng nhập thành công' });
+
             $('#login-notify').css({
                 display: 'block',
                 backgroundColor: '#fdb45e'
             });
         } else {
-            this.setState({ loginNotify: 'Đăng nhập thất bại' });
+
             $('#login-notify').css({
                 display: 'block',
                 backgroundColor: '#c7c5c3'
@@ -114,6 +131,71 @@ class Header extends React.Component {
     }
     handlePassword(e) {
         this.setState({ password: e.target.value });
+    }
+
+    handleDisName(e) {
+        this.setState({ disName: e.target.value });
+    }
+    handleReName(e) {
+        this.setState({ reName: e.target.value });
+        return fetch(`${process.env.REACT_APP_DOMAIN}/api/v1/accounts/check-username/${e.target.value}`, {
+            method: 'GET'
+        }).then(res => { return res.json() }).then(js => {
+            if (js.message === 'success') {
+                this.setState({ acceptName: true })
+            } else {
+                this.setState({ acceptName: false })
+            }
+        })
+    }
+    handleRePassword(e) {
+        this.setState({ rePassword: e.target.value });
+        if (e.target.value === this.state.regisPassword) {
+            this.setState({ acceptPassword: true })
+        } else {
+            this.setState({ acceptPassword: false })
+        }
+    }
+    handleRegisPassword(e) {
+        this.setState({ regisPassword: e.target.value });
+        if (this.state.rePassword === e.target.value) {
+            this.setState({ acceptPassword: true })
+        } else {
+            this.setState({ acceptPassword: false })
+        }
+    }
+    showRegister() {
+        this.hideFormLogin();
+        this.setState({ showSignIn: true })
+    }
+    hideRegister() {
+        this.setState({ showSignIn: false })
+    }
+    submitRegister(e) {
+
+        e.preventDefault();
+        if (this.state.acceptName && this.state.acceptPassword) {
+            const data = {
+                username: this.state.reName,
+                name: this.state.disName,
+                password: this.state.regisPassword
+            }
+            fetch(`${process.env.REACT_APP_DOMAIN}/api/v1/accounts/add`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ data: data })
+            }).then(res => { return res.json() }).then(jsRes => {
+                if (jsRes.message === 'success') {
+                    localStorage.username = this.state.reName;
+                    localStorage.password = this.state.rePassword;
+                    this.setState({ isLogin: true });
+                    this.setState({ showRegister: false });
+                    this.showLoginNotify('Đăng ký thành công');
+                } else {
+                    this.showLoginNotify('Đăng ký thất bại');
+                }
+            })
+        }
     }
     render() {
         return (
@@ -205,15 +287,53 @@ class Header extends React.Component {
                                                     </Modal.Body>
                                                     <Modal.Footer>
                                                         <Button variant="secondary" onClick={this.hideFormLogin}>Hủy</Button>
+                                                        <Button variant="" className='btn-login' onClick={this.showRegister}>Đăng ký</Button>
                                                         <Button variant="" className='btn-login' type='submit'>Đăng nhập</Button>
+                                                    </Modal.Footer>
+                                                </Form>
+                                            </Modal>
+                                            <Modal show={this.state.showSignIn} onHide={this.hideRegister}>
+                                                <Modal.Header closeButton>
+                                                    <Modal.Title>Đăng ký</Modal.Title>
+                                                </Modal.Header>
+                                                <Form id='regis-form' onSubmit={this.submitRegister}>
+                                                    <Modal.Body>
+                                                        <Form.Group controlId='regis-name'>
+                                                            {
+                                                                (!this.state.acceptName) ? (
+                                                                    <p style={{ color: 'red' }}>Tên đăng nhập không hợp lệ</p>
+                                                                ) : (<div></div>)
+                                                            }
+                                                            <Form.Control type="text" name="regis-name" required="required" placeholder="Tên đăng ký" onChange={this.handleReName} value={this.state.reName} />
+                                                        </Form.Group>
+                                                        <Form.Group controlId='dis-name'>
+                                                            <Form.Control type="text" name="dis-name" required="required" placeholder="Tên hiển thị" onChange={this.handleDisName} value={this.state.disName} />
+                                                        </Form.Group>
+
+                                                        <Form.Group controlId='regis-pass'>
+                                                            <Form.Control type="password" name="regis-pass" required="required" placeholder="Mật khẩu" onChange={this.handleRegisPassword} value={this.state.regisPassword} />
+                                                        </Form.Group>
+                                                        <Form.Group controlId='re-pass'>
+                                                            <Form.Control type="password" name="re-pass" required="required" placeholder="Mật khẩu xác nhận" onChange={this.handleRePassword} value={this.state.rePassword} />
+                                                            {
+                                                                (!this.state.acceptPassword) ? (
+                                                                    <p style={{ color: 'red' }}>Mật khẩu không khớp nhau</p>
+                                                                ) : (<div></div>)
+                                                            }
+                                                        </Form.Group>
+                                                    </Modal.Body>
+                                                    <Modal.Footer>
+                                                        <Button variant="secondary" onClick={this.hideRegister}>Hủy</Button>
+                                                        <Button variant="" className='btn-login' onClick={this.showFormLogin}>Đăng nhập</Button>
+                                                        <Button variant="" className='btn-login' type='submit'>Đăng ký</Button>
                                                     </Modal.Footer>
                                                 </Form>
                                             </Modal>
                                         </div>
 
                                     ) : (
-                                            <div></div>
-                                        )}
+                                        <div></div>
+                                    )}
                                 </Nav>
                             </Col>
                         </Row>
