@@ -239,39 +239,21 @@ class Header extends React.Component {
                                 <div className="logo pull-left">
                                     <Link to="/"><img src={logo} alt="" /></Link>
                                 </div>
-                                <ButtonGroup>
-                                    <DropdownButton as={ButtonGroup} title='USA' id='usa' className='usa' variant="">
-                                        <Dropdown.Item eventKey="1" to='/#'>
-                                            Canada
-                                        </Dropdown.Item>
-                                        <Dropdown.Item eventKey="2" to='/#'>
-                                            Uk
-                                        </Dropdown.Item>
-                                    </DropdownButton>
 
-                                    <DropdownButton as={ButtonGroup} title='DOLLAR' id='dollar' className='usa' variant="">
-                                        <Dropdown.Item eventKey="1" to='/#'>
-                                            Canada Dollar
-                                        </Dropdown.Item>
-                                        <Dropdown.Item eventKey="2" to='/#'>
-                                            Pound
-                                        </Dropdown.Item>
-                                    </DropdownButton>
-                                </ButtonGroup>
                             </Col>
                             <Col sm={6}>
                                 <Nav className="justify-content-end shop-menu">
                                     {
                                         this.state.isLogin ? (
-                                            <Nav.Item><Nav.Link href='/account'><i className="fa fa-user"></i> Account</Nav.Link></Nav.Item>
+                                            <Nav.Item><Nav.Link href='/account'><i className="fa fa-user"></i> Tài khoản</Nav.Link></Nav.Item>
                                         ) : (<div></div>)
                                     }
-                                    <Nav.Item><Nav.Link href='/about'><i className="fa fa-star"></i> About us</Nav.Link></Nav.Item>
-                                    <Nav.Item><Nav.Link href='/contact'><i className="fa fa-crosshairs"></i> Contact</Nav.Link></Nav.Item>
-                                    <Nav.Item><Nav.Link href="/cart" className='login active'><i className="fa fa-shopping-cart"></i> Cart</Nav.Link></Nav.Item>
+                                    <Nav.Item><Nav.Link href='/about'><i className="fa fa-star"></i> Về chúng tôi</Nav.Link></Nav.Item>
+                                    <Nav.Item><Nav.Link href='/contact'><i className="fa fa-crosshairs"></i> Liên hệ</Nav.Link></Nav.Item>
+                                    <Nav.Item><Nav.Link href="/cart" className='login active'><i className="fa fa-shopping-cart"></i> Giỏ hàng</Nav.Link></Nav.Item>
                                     {(!this.state.isLogin) ? (
                                         <div>
-                                            <Nav.Item><Nav.Link href="/" onClick={this.showFormLogin} className='login'><i className="fa fa-lock"></i> Login</Nav.Link></Nav.Item>
+                                            <Nav.Item><Nav.Link href="/" onClick={this.showFormLogin} className='login'><i className="fa fa-lock"></i> Đăng nhập</Nav.Link></Nav.Item>
                                             <Modal show={this.state.showLogin} onHide={this.hideFormLogin}>
                                                 <Modal.Header closeButton>
                                                     <Modal.Title>Đăng nhập</Modal.Title>
@@ -347,8 +329,8 @@ class Header extends React.Component {
                                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                                     <Navbar.Collapse id="basic-navbar-nav">
                                         <Nav className="mr-auto">
-                                            <Nav.Link href="/" className="active">Home</Nav.Link>
-                                            <NavDropdown title="Shop" id="product-nav-dropdown" className="drop-menu">
+                                            <Nav.Link href="/" className="active">Trang chủ</Nav.Link>
+                                            <NavDropdown title="Cửa hàng" id="product-nav-dropdown" className="drop-menu">
                                                 {this.state.localShop && this.state.localShop.map((local, key) => {
                                                     return <NavDropdown.Item key={key} href={`/list-shop/${local.routine_city}`}>{local.city}</NavDropdown.Item>
                                                 })}
