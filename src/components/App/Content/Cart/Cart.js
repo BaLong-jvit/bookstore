@@ -63,8 +63,10 @@ class Cart extends React.Component {
                     if (id === item) {
                         amount++;
                     }
+                    return 1;
                 })
                 listCart.push({ book_id: id, amount: amount });
+                return 1;
             })
             this.setState({ listCarts: listCart })
         }
@@ -75,13 +77,15 @@ class Cart extends React.Component {
             if (cart !== item) {
                 return list.push(cart);
             }
+            return 1;
         })
         this.setState({ listCarts: list });
     }
     changeAmount(bookId, a) {
         let list = this.state.listCarts;
         for (let i = 0; i < list.length; i++) {
-            if (list[i].book_id == bookId) {
+            if (parseInt(list[i].book_id) === parseInt(bookId)) {
+
                 list[i].amount = a;
             }
         }

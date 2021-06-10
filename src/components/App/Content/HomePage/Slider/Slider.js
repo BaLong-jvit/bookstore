@@ -1,6 +1,8 @@
 import React from 'react';
 import './Slider.css';
-// import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import * as actions from './../../../../../actions/index';
+
 
 import Slide from './Slide/Slide';
 import { Carousel, Col, Container, Row } from 'react-bootstrap';
@@ -8,29 +10,19 @@ import { Carousel, Col, Container, Row } from 'react-bootstrap';
 
 
 class Slider extends React.Component {
+
     constructor(props) {
         super(props);
-        this.state = {
-            listAdverts: []
-        }
-
-        this.createSlider = this.createSlider.bind(this);
+        this.wrapper = React.createRef();
     }
 
     componentDidMount() {
-        this.createSlider();
+        this.props.getListAdverts();
     }
-    createSlider() {
-        return fetch(`${process.env.REACT_APP_DOMAIN}/api/v1/home/adverts/list-adverts`)
-            .then(response => { return response.json() })
-            .then(responseJson => {
-                this.setState({ listAdverts: responseJson.adverts })
-            });
-    }
-
     render() {
+        console.log(this.props.listAdverts)
         return (
-            <section id='slider'>
+            <section id='slider' ref={this.wrapper}>
                 <Container fluid='sm'>
                     <Row >
                         <Col sm={12}>
@@ -38,7 +30,7 @@ class Slider extends React.Component {
                                 nextIcon={<span aria-hidden="true" className="carousel-control-next-icon frontIcon" />}
                                 prevIcon={<span aria-hidden="true" className="carousel-control-prev-icon frontIcon" />}
                                 pause={false} >
-                                {this.state.listAdverts && this.state.listAdverts.map((advert, key) => {
+                                {this.props.listAdverts && this.props.listAdverts.map((advert, key) => {
                                     return (
                                         <Carousel.Item interval={3000} key={key} >
                                             <Slide key={key} advert={advert} />
@@ -53,4 +45,16 @@ class Slider extends React.Component {
         );
     }
 }
-export default Slider;
+const handleListAdvertsInProps = (state) => {
+    return {
+        listAdverts: state.slideAdvert
+    }
+};
+const handleDispatchToProps = (dispatch, props) => {
+    return {
+        getListAdverts: () => {
+            dispatch(actions.getListAdverts())
+        }
+    }
+}
+export default connect(handleListAdvertsInProps, handleDispatchToProps)(Slider);

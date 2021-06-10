@@ -2,29 +2,21 @@ import React from 'react';
 import './About.css';
 import { Container } from 'react-bootstrap';
 import AboutItem from './AboutItem/AboutItem';
+import { connect } from 'react-redux';
+import * as actions from './../../../../actions/index'
 
 class About extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            aboutItems: [1, 2, 3, 4]
-        }
-    }
+
     componentDidMount() {
         document.title = `Giới thiệu | Bá Long Bookstore `;
-        this.getAboutUs();
-    }
-    getAboutUs() {
-        return fetch(`${process.env.REACT_APP_DOMAIN}/api/v1/about-us/items`).then(response => { return response.json() }).then(responseJson => {
-            this.setState({ aboutItems: responseJson.items });
-        })
+        this.props.getAboutUs();
     }
     render() {
         return (
             <Container>
                 <div className='title about-us'>
                     <h2> Giới thiệu <strong>Bá Long</strong> Bookstore </h2>
-                    {this.state.aboutItems && this.state.aboutItems.map((item, key) => {
+                    {this.props.about && this.props.about.map((item, key) => {
                         return <AboutItem key={key} item={item} />
                     })}
                 </div>
@@ -32,4 +24,17 @@ class About extends React.Component {
         );
     }
 }
-export default About;
+
+const handleAboutToProps = (state) => {
+    return {
+        about: state.aboutUs
+    }
+}
+const handleDispatchToProps = (dispatch, props) => {
+    return {
+        getAboutUs: () => {
+            dispatch(actions.getAboutUs())
+        }
+    }
+}
+export default connect(handleAboutToProps, handleDispatchToProps)(About);

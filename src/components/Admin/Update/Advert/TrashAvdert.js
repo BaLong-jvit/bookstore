@@ -2,7 +2,7 @@ import { Component } from 'react';
 import './Advert.css';
 import AdvertRowTrash from './AdvertRowTrash/AdvertRowTrash';
 import Pagination from "react-js-pagination";
-import { Button, Table, Container } from "react-bootstrap";
+import { Table, Container } from "react-bootstrap";
 import { Link } from 'react-router-dom'
 
 class TrashAdvert extends Component {

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './AccountRowTrash.css';
 import { Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 import $ from 'jquery';
 
 class AccountRowTrash extends Component {

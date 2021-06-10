@@ -3,9 +3,9 @@ import './App.css';
 import { BrowserRouter } from 'react-router-dom';
 
 
-import Header from '../Header/Header';
-import Content from '../Content/Content';
-import Footer from '../Footer/Footer';
+import Header from './Header/Header';
+import Content from './Content/Content';
+import Footer from './Footer/Footer';
 
 
 class App extends React.Component {

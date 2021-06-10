@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import './AdvertRowTrash.css'
-import { Link } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 import $ from 'jquery';
 

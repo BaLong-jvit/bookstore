@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Nav } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom'
 import './Index.css'
 

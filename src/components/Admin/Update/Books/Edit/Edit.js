@@ -102,6 +102,7 @@ class Edit extends Component {
                 url: `${process.env.REACT_APP_DOMAIN}/image/${img.path}/${img.name}`,
                 id: img.id
             });
+            return 1;
         });
         this.setState({ supImageUrls: arr });
     }
@@ -199,6 +200,7 @@ class Edit extends Component {
                     Array.from(e.target.files).map((file, key) => {
                         arr.push({ url: URL.createObjectURL(file), id: key });
                         arr2.push({ delete: 0 });
+                        return 1;
                     })
                     this.setState({
                         selectSupImgUpload: arr2,
@@ -206,10 +208,9 @@ class Edit extends Component {
                         supImageUpload: e.target.files
                     });
                     let supArr = this.state.supImage;
-                    supArr.map((sup, key) => {
-
+                    supArr.map(sup => {
                         sup.deleted = 1;
-
+                        return 1;
                     });
                     this.setState({ supImage: supArr });
                 } else {
@@ -233,6 +234,7 @@ class Edit extends Component {
                 } else {
                     arr2[i].delete = 1
                 }
+                return 1;
             });
             this.setState({
                 supImageUrls: arrUp,
@@ -244,13 +246,14 @@ class Edit extends Component {
                 if (i === sup.id) {
                     sup.deleted = 1;
                 }
+                return 1;
             });
             this.setState({ supImage: supArr });
-            this.state.supImageUrls.map((url, key) => {
-
+            this.state.supImageUrls.map(url => {
                 if (i !== url.id) {
                     arr.push(url);
                 }
+                return 1;
             });
             this.setState({ supImageUrls: arr });
         }
@@ -272,15 +275,17 @@ class Edit extends Component {
         let arr = this.state.compose;
         let count = 0;
         this.state.compose.map(compose => {
-            if (e.target.value == compose.id) {
+            if (parseInt(e.target.value) === parseInt(compose.id)) {
                 count++;
             }
+            return 1;
         })
         if (!count) {
             this.state.artists.map(art => {
-                if (e.target.value == art.id) {
+                if (parseInt(e.target.value) === parseInt(art.id)) {
                     arr.push(art);
                 }
+                return 1;
             });
             this.setState({ compose: arr });
             this.getMaxArt();
@@ -290,15 +295,17 @@ class Edit extends Component {
         let arr = this.state.connectLang;
         let count = 0;
         this.state.connectLang.map(connect => {
-            if (e.target.value == connect.id) {
+            if (parseInt(e.target.value) === parseInt(connect.id)) {
                 count++;
             }
+            return 1;
         })
         if (!count) {
             this.state.languages.map(lang => {
-                if (e.target.value == lang.id) {
+                if (parseInt(e.target.value) === parseInt(lang.id)) {
                     arr.push(lang);
                 }
+                return 1;
             });
             this.setState({ connectLang: arr });
             this.getMaxLang();
@@ -308,9 +315,10 @@ class Edit extends Component {
         if (this.state.compose.length > 1) {
             let arr = [];
             this.state.compose.map(compose => {
-                if (id != compose.id) {
+                if (parseInt(id) !== parseInt(compose.id)) {
                     arr.push(compose);
                 }
+                return 1;
             })
             this.setState({ compose: arr });
         } else {
@@ -322,9 +330,10 @@ class Edit extends Component {
         if (this.state.connectLang.length > 1) {
             let arr = [];
             this.state.connectLang.map(connect => {
-                if (id != connect.id) {
+                if (parseInt(id) !== parseInt(connect.id)) {
                     arr.push(connect);
                 }
+                return 1;
             })
             this.setState({ connectLang: arr });
         } else {
@@ -439,13 +448,15 @@ class Edit extends Component {
     uploadSupImage() {
         if (this.state.supImageUpload !== null) {
             this.state.selectSupImgUpload.map((img, key) => {
-                if (img.delete == 0) {
+                if (img.delete === 0) {
                     this.uploadSingleSupImage(this.state.supImageUpload[key]);
                 }
+                return 1;
             })
             let arr = this.state.supImage;
             arr.map(a => {
-                a.deleted = 1
+                a.deleted = 1;
+                return 1;
             })
             return fetch(`${process.env.REACT_APP_DOMAIN}/api/v2/book-images/delete-sup-image`, {
                 method: 'DELETE',

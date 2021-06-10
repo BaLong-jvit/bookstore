@@ -3,6 +3,7 @@ import './Contact.css';
 
 import { Container, Row, Col, Form, Button, Nav } from 'react-bootstrap';
 import GoogleMapReact from 'google-map-react';
+import { connect } from 'react-redux'
 
 class AnyReactComponent extends React.Component {
     render() {
@@ -26,7 +27,6 @@ class Contact extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            contact: {},
             center: {
                 lat: 10.761431,
                 lng: 106.686373
@@ -45,14 +45,6 @@ class Contact extends React.Component {
     }
     componentDidMount() {
         document.title = 'Liên hệ | Bá Long Bookstore';
-        this.getContact();
-    }
-    getContact() {
-        return fetch(`${process.env.REACT_APP_DOMAIN}/api/v1/contact/get-contact-infor`).then(response => {
-            return response.json();
-        }).then(responseJson => {
-            this.setState({ contact: responseJson.contact });
-        })
     }
     handleName(e) {
         this.setState({ name: e.target.value });
@@ -98,7 +90,6 @@ class Contact extends React.Component {
             this.setState({ message: '' });
 
         });
-
     }
     render() {
         return (
@@ -165,21 +156,21 @@ class Contact extends React.Component {
                         <div className='title contact-info'>
                             <h2 className="title text-center">Thông tin lên hệ</h2>
                             <address>
-                                <p>{this.state.contact.name}</p>
-                                <p>{this.state.contact.address}, đường {this.state.contact.street}, phường {this.state.contact.ward}, quận {this.state.contact.district}</p>
-                                <p> thành phố {this.state.contact.province}, {this.state.contact.country}</p>
-                                <p>Mobile: +{this.state.contact.phonenumber}</p>
-                                <p>Email: {this.state.contact.email}</p>
+                                <p>{this.props.contact.name}</p>
+                                <p>{this.props.contact.address}, đường {this.props.contact.street}, phường {this.props.contact.ward}, quận {this.props.contact.district}</p>
+                                <p> thành phố {this.props.contact.province}, {this.props.contact.country}</p>
+                                <p>Mobile: +{this.props.contact.phonenumber}</p>
+                                <p>Email: {this.props.contact.email}</p>
                             </address>
                             <div className=''>
                                 <h2 className="title text-center">Mạng xã hội</h2>
                                 <Nav className="justify-content-end">
-                                    <Nav.Item><Nav.Link href={this.state.contact.facebook} target="_blank"><i className="fa fa-facebook"></i></Nav.Link></Nav.Item>
-                                    <Nav.Item><Nav.Link href={this.state.contact.twitter} target="_blank"><i className="fa fa-twitter"></i></Nav.Link></Nav.Item>
-                                    <Nav.Item><Nav.Link href={this.state.contact.instagram} target="_blank"><i className="fa fa-linkedin"></i></Nav.Link></Nav.Item>
-                                    <Nav.Item><Nav.Link href={this.state.contact.zalo} target="_blank" className='fa-zalo'><i className='fa'></i></Nav.Link></Nav.Item>
-                                    <Nav.Item><Nav.Link href={this.state.contact.youtube} target="_blank" className='fa-youtb'><i className="fa fa-youtube"></i></Nav.Link></Nav.Item>
-                                    <Nav.Item><Nav.Link href={this.state.contact.google} target="_blank"><i className="fa fa-google-plus"></i></Nav.Link></Nav.Item>
+                                    <Nav.Item><Nav.Link href={this.props.contact.facebook} target="_blank"><i className="fa fa-facebook"></i></Nav.Link></Nav.Item>
+                                    <Nav.Item><Nav.Link href={this.props.contact.twitter} target="_blank"><i className="fa fa-twitter"></i></Nav.Link></Nav.Item>
+                                    <Nav.Item><Nav.Link href={this.props.contact.instagram} target="_blank"><i className="fa fa-linkedin"></i></Nav.Link></Nav.Item>
+                                    <Nav.Item><Nav.Link href={this.props.contact.zalo} target="_blank" className='fa-zalo'><i className='fa'></i></Nav.Link></Nav.Item>
+                                    <Nav.Item><Nav.Link href={this.props.contact.youtube} target="_blank" className='fa-youtb'><i className="fa fa-youtube"></i></Nav.Link></Nav.Item>
+                                    <Nav.Item><Nav.Link href={this.props.contact.google} target="_blank"><i className="fa fa-google-plus"></i></Nav.Link></Nav.Item>
                                 </Nav>
                             </div>
                         </div>
@@ -189,4 +180,9 @@ class Contact extends React.Component {
         );
     }
 }
-export default Contact;
+const handleConnectToProps = (state) => {
+    return {
+        contact: state.contact
+    }
+}
+export default connect(handleConnectToProps, null)(Contact);

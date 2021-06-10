@@ -3,11 +3,12 @@ import { Link } from 'react-router-dom';
 import {
     Container,
     Row, Col,
-    Nav, ButtonGroup,
+    Nav,
     Button,
-    DropdownButton,
-    Dropdown, Navbar, NavDropdown, Modal, Form
+    Navbar, NavDropdown, Modal, Form
 } from 'react-bootstrap';
+import { connect } from 'react-redux'
+import * as actions from './../../../actions/index';
 
 import './Header.css';
 import logo from './logo.png';
@@ -19,7 +20,6 @@ class Header extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            contact: {},
             localShop: [],
             isLogin: false,
             showLogin: false,
@@ -50,8 +50,9 @@ class Header extends React.Component {
         this.handleRegisPassword = this.handleRegisPassword.bind(this);
         this.handleRePassword = this.handleRePassword.bind(this);
     }
+
     componentDidMount() {
-        this.getContact();
+        this.props.getContact();
         this.getLocalShop();
         this.checkLogin();
     }
@@ -62,13 +63,6 @@ class Header extends React.Component {
         } else {
             this.setState({ isLogin: false })
         }
-    }
-    getContact() {
-        return fetch(`${process.env.REACT_APP_DOMAIN}/api/v1/contact/get-contact-infor`).then(response => {
-            return response.json();
-        }).then(responseJson => {
-            this.setState({ contact: responseJson.contact });
-        })
     }
     getLocalShop() {
         return fetch(`${process.env.REACT_APP_DOMAIN}/api/v1/shops/get-local-shops`).then(response => {
@@ -209,10 +203,10 @@ class Header extends React.Component {
                             <Col sm={6}>
                                 <div className="contactinfo">
                                     <ul className="nav nav-pills">
-                                        <li><Link to="/#"><i className="fa fa-phone"></i> +{this.state.contact.phonenumber}	&nbsp;	&nbsp;</Link></li>
+                                        <li><Link to="/#"><i className="fa fa-phone"></i> +{this.props.contact.phonenumber}	&nbsp;	&nbsp;</Link></li>
                                         <li>
                                             <address>
-                                                <Link to="/#"><i className="fa fa-envelope"></i> {this.state.contact.email}</Link>
+                                                <Link to="/#"><i className="fa fa-envelope"></i> {this.props.contact.email}</Link>
                                             </address>
                                         </li>
                                     </ul>
@@ -220,12 +214,12 @@ class Header extends React.Component {
                             </Col>
                             <Col sm={6}>
                                 <Nav className="justify-content-end">
-                                    <Nav.Item><Nav.Link href={this.state.contact.facebook} target="_blank"><i className="fa fa-facebook"></i></Nav.Link></Nav.Item>
-                                    <Nav.Item><Nav.Link href={this.state.contact.twitter} target="_blank"><i className="fa fa-twitter"></i></Nav.Link></Nav.Item>
-                                    <Nav.Item><Nav.Link href={this.state.contact.instagram} target="_blank"><i className="fa fa-linkedin"></i></Nav.Link></Nav.Item>
-                                    <Nav.Item><Nav.Link href={this.state.contact.zalo} target="_blank" className='fa-zalo'><i className='fa'></i></Nav.Link></Nav.Item>
-                                    <Nav.Item><Nav.Link href={this.state.contact.youtube} target="_blank" className='fa-youtb'><i className="fa fa-youtube"></i></Nav.Link></Nav.Item>
-                                    <Nav.Item><Nav.Link href={this.state.contact.google} target="_blank"><i className="fa fa-google-plus"></i></Nav.Link></Nav.Item>
+                                    <Nav.Item><Nav.Link href={this.props.contact.facebook} target="_blank"><i className="fa fa-facebook"></i></Nav.Link></Nav.Item>
+                                    <Nav.Item><Nav.Link href={this.props.contact.twitter} target="_blank"><i className="fa fa-twitter"></i></Nav.Link></Nav.Item>
+                                    <Nav.Item><Nav.Link href={this.props.contact.instagram} target="_blank"><i className="fa fa-linkedin"></i></Nav.Link></Nav.Item>
+                                    <Nav.Item><Nav.Link href={this.props.contact.zalo} target="_blank" className='fa-zalo'><i className='fa'></i></Nav.Link></Nav.Item>
+                                    <Nav.Item><Nav.Link href={this.props.contact.youtube} target="_blank" className='fa-youtb'><i className="fa fa-youtube"></i></Nav.Link></Nav.Item>
+                                    <Nav.Item><Nav.Link href={this.props.contact.google} target="_blank"><i className="fa fa-google-plus"></i></Nav.Link></Nav.Item>
                                 </Nav>
                             </Col>
                         </Row>
@@ -235,13 +229,13 @@ class Header extends React.Component {
                 <div className="header-middle">
                     <Container fluid='sm'>
                         <Row>
-                            <Col sm={6}>
+                            <Col sm={4}>
                                 <div className="logo pull-left">
                                     <Link to="/"><img src={logo} alt="" /></Link>
                                 </div>
 
                             </Col>
-                            <Col sm={6}>
+                            <Col sm={8}>
                                 <Nav className="justify-content-end shop-menu">
                                     {
                                         this.state.isLogin ? (
@@ -355,4 +349,16 @@ class Header extends React.Component {
         );
     }
 }
-export default Header;
+const handleContactInProps = (state) => {
+    return {
+        contact: state.contact
+    }
+};
+const handleDispatchToProps = (dispatch, props) => {
+    return {
+        getContact: () => {
+            dispatch(actions.contactGet())
+        }
+    }
+}
+export default connect(handleContactInProps, handleDispatchToProps)(Header);

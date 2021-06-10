@@ -1,0 +1,7 @@
+export const CONTACT_GET = 'CONTACT_GET';
+export const SHOW_LOGIN_FORM = 'SHOW_LOGIN_FORM';
+export const HIDE_LOGIN_FORM = 'HIDE_LOGIN_FORM';
+export const SHOW_REGISTER_FORM = 'SHOW_REGISTER_FORM';
+export const HIDE_REGISTER_FORM = 'HIDE_REGISTER_FORM';
+export const ABOUT_US_GET = 'ABOUT_US_GET';
+export const LIST_ADVERTS = 'LIST_ADVERTS';

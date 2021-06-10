@@ -123,6 +123,7 @@ class Add extends Component {
                 Array.from(e.target.files).map((file, key) => {
                     arr.push({ url: URL.createObjectURL(file), id: key });
                     arr2.push({ delete: 0 });
+                    return 1;
                 })
                 this.setState({
                     selectSupImgUpload: arr2,
@@ -148,6 +149,7 @@ class Add extends Component {
                 } else {
                     arr2[i].delete = 1
                 }
+                return 1;
             });
             this.setState({
                 supImageUrls: arrUp,
@@ -158,6 +160,7 @@ class Add extends Component {
             if (i !== url.id) {
                 arr.push(url);
             }
+            return 1;
         });
         this.setState({ supImageUrls: arr });
     }
@@ -165,9 +168,10 @@ class Add extends Component {
         if (this.state.compose.length > 1) {
             let arr = [];
             this.state.compose.map(compose => {
-                if (id != compose.id) {
+                if (id !== compose.id) {
                     arr.push(compose);
                 }
+                return 1;
             })
             this.setState({ compose: arr });
         } else {
@@ -180,9 +184,10 @@ class Add extends Component {
         if (this.state.connectLang.length > 1) {
             let arr = [];
             this.state.connectLang.map(connect => {
-                if (id != connect.id) {
+                if (id !== connect.id) {
                     arr.push(connect);
                 }
+                return 1;
             })
             this.setState({ connectLang: arr });
         } else {
@@ -239,9 +244,10 @@ class Add extends Component {
                 if (jsonResponse.message === 'success') {
                     if (this.state.selectSupImgUpload !== null) {
                         this.state.selectSupImgUpload.map((img, key) => {
-                            if (img.delete == 0) {
+                            if (img.delete === 0) {
                                 this.uploadSingleSupImage(this.state.supImageUpload[key], jsonRes.book.id);
                             }
+                            return 1;
                         })
                     }
                     else {
@@ -278,15 +284,17 @@ class Add extends Component {
         let arr = this.state.compose;
         let count = 0;
         this.state.compose.map(compose => {
-            if (e.target.value == compose.id) {
+            if (e.target.value === compose.id) {
                 count++;
             }
+            return 1;
         })
         if (!count) {
             this.state.artists.map(art => {
-                if (e.target.value == art.id) {
+                if (e.target.value === art.id) {
                     arr.push(art);
                 }
+                return 1;
             });
             this.setState({ compose: arr });
             this.getMaxArt();
@@ -296,15 +304,17 @@ class Add extends Component {
         let arr = this.state.connectLang;
         let count = 0;
         this.state.connectLang.map(connect => {
-            if (e.target.value == connect.id) {
+            if (e.target.value === connect.id) {
                 count++;
             }
+            return 1;
         })
         if (!count) {
             this.state.languages.map(art => {
-                if (e.target.value == art.id) {
+                if (e.target.value === art.id) {
                     arr.push(art);
                 }
+                return 1;
             });
             this.setState({ connectLang: arr });
             this.getMaxConnect();
@@ -329,7 +339,6 @@ class Add extends Component {
     }
     render() {
         return (
-
             <Container>
                 <h2>Thêm sản phẩm</h2>
                 <div className='add-notify' style={{

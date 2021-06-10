@@ -9,9 +9,19 @@ import 'font-awesome/css/font-awesome.min.css';
 import reportWebVitals from './reportWebVitals';
 import Component from './components/Component';
 
+// Store
+import { applyMiddleware, createStore } from "redux";
+import myReducer from './reducers/index';
+import { Provider } from 'react-redux';
+import thunk from 'redux-thunk';
+
+const store = createStore(myReducer, applyMiddleware(thunk));
+
 ReactDOM.render(
   <React.StrictMode>
-    <Component />
+    <Provider store={store}>
+      <Component />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

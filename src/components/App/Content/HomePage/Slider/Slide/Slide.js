@@ -29,7 +29,7 @@ class Slide extends React.Component {
     }
     render() {
         return (
-            <Row>
+            <Row >
                 <Col xs={6} className='item-slide'>
                     <h1><span>B-Long</span> Bookstore</h1>
                     <h2>{this.props.advert.name}</h2>

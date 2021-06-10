@@ -81,6 +81,7 @@ class CartItem extends React.Component {
                 if (book !== this.props.cart.book_id) {
                     return a.push(book);
                 }
+                return 1;
             });
             localStorage.carts = JSON.stringify(a);
             this.props.deleteCart(this.props.cart);
@@ -179,7 +180,7 @@ class CartItem extends React.Component {
                     else {
                         list.push(book);
                     }
-                    return;
+                    return 1;
                 });
                 localStorage.carts = JSON.stringify(list);
             }

@@ -124,7 +124,7 @@ address {
 .fa-zalo i::after {
     content: "lO";
     color: rgba(255, 255, 255, 0);
-    background-image: url("../../../../src/image/icon/zalo-default.png");
+    background-image: url("../../../../../src/image/icon/zalo-default.png");
     background-repeat: no-repeat;
     background-size: contain;
     transition: 0.9s all;
@@ -134,7 +134,7 @@ address {
 }
 
 .fa-zalo:hover i::after {
-    background-image: url("../../../../src/image/icon/zalo-hover.png");
+    background-image: url("../../../../../src/image/icon/zalo-hover.png");
 }
 .fa-youtb {
     transition: 0.9s;

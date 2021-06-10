@@ -216,7 +216,7 @@ class BillRow extends Component {
                 </td>
                 <td>
                     <Button variant='success' className='detail=bills' onClick={this.showDetail}
-                        disabled={(this.props.bill.status == 7 || this.props.bill.status == 9) ? "disabled" : ''} ><i className="fa fa-info" aria-hidden="true"></i>&nbsp; Xem chi tiết</Button>
+                        disabled={(this.props.bill.status === 7 || this.props.bill.status === 9) ? "disabled" : ''} ><i className="fa fa-info" aria-hidden="true"></i>&nbsp; Xem chi tiết</Button>
                 </td>
             </tr>
         );
